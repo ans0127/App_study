@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DiceGame" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="cUJ-VW-unH">
+                                <rect key="frame" x="20" y="341.66666666666669" width="353" height="169"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black1" translatesAutoresizingMaskIntoConstraints="NO" id="yMS-FC-8Gg">
+                                        <rect key="frame" x="0.0" y="0.0" width="169" height="169"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="yMS-FC-8Gg" secondAttribute="height" multiplier="1:1" id="6jL-Ve-RcV"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="black2" translatesAutoresizingMaskIntoConstraints="NO" id="tgc-rn-cSK">
+                                        <rect key="frame" x="184" y="0.0" width="169" height="169"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="tgc-rn-cSK" secondAttribute="height" multiplier="1:1" id="8c0-mt-0H8"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="tgc-rn-cSK" firstAttribute="height" secondItem="yMS-FC-8Gg" secondAttribute="height" multiplier="1:1" id="Hpv-au-617"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="DICE GAME!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qmm-89-aJ4">
+                                <rect key="frame" x="93" y="140" width="206.66666666666669" height="45.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMr-Ry-y73">
+                                <rect key="frame" x="151.66666666666666" y="698" width="90" height="40"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="7Jy-oB-eex"/>
+                                    <constraint firstAttribute="height" constant="40" id="xnS-q5-3NE"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ROLL !!"/>
+                                <connections>
+                                    <action selector="rollBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3V6-Cd-6Ad"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bMr-Ry-y73" secondAttribute="bottom" constant="80" id="DYj-t0-Ne2"/>
+                            <constraint firstItem="Qmm-89-aJ4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GI1-mQ-9L4"/>
+                            <constraint firstItem="Qmm-89-aJ4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="80" id="RF6-nO-joX"/>
+                            <constraint firstItem="cUJ-VW-unH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RPM-sa-t93"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cUJ-VW-unH" secondAttribute="trailing" constant="20" id="SsF-nj-Mpq"/>
+                            <constraint firstItem="cUJ-VW-unH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XMF-V1-bpS"/>
+                            <constraint firstItem="cUJ-VW-unH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="au9-Y8-BvL"/>
+                            <constraint firstItem="Qmm-89-aJ4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e8F-qk-yfz"/>
+                            <constraint firstItem="bMr-Ry-y73" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jE0-6n-MK1"/>
+                            <constraint firstItem="cUJ-VW-unH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oU6-8J-Bhc"/>
+                            <constraint firstItem="cUJ-VW-unH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="yfp-wn-P9P"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="firstDice" destination="yMS-FC-8Gg" id="IGF-94-PU8"/>
+                        <outlet property="rollBtn" destination="bMr-Ry-y73" id="mDZ-FQ-x89"/>
+                        <outlet property="secondDice" destination="tgc-rn-cSK" id="SI6-ub-8Vv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="35.877862595419849" y="3.5211267605633805"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="black1" width="399" height="399"/>
+        <image name="black2" width="399" height="399"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
