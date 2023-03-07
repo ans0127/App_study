@@ -49,7 +49,7 @@ class ViewController: UIViewController {
                 myChoice = Rps.rock
             case "보":
                 myChoice = Rps.paper
-            default:
+            default:    //title 은 문자열이기 때문에 모든 케이스에 대해 대응하기 위해 default 필요
                 break
         }
     }
@@ -109,9 +109,6 @@ class ViewController: UIViewController {
         }else{
             mainLable.text = "you lose"
         }
-
-        
-        
         
     }
     
