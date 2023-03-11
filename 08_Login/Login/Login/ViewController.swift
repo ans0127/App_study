@@ -71,6 +71,7 @@ class ViewController: UIViewController {
         tf.autocorrectionType = .no
         tf.spellCheckingType = .no
         tf.keyboardType = .emailAddress
+        tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)  //editingchanged : 값이 변할 떄 마다
         
         return tf
     }()
@@ -112,6 +113,7 @@ class ViewController: UIViewController {
         tf.spellCheckingType = .no
         tf.isSecureTextEntry = true  // 비밀번호 가려주는 설정
         tf.clearsOnBeginEditing = false
+        tf.addTarget(self, action: #selector(textFieldEditingChanged(_:)), for: .editingChanged)
         
         return tf
     }()
@@ -332,6 +334,31 @@ extension ViewController : UITextFieldDelegate{
             self.stackView.layoutIfNeeded() // 에니메이션이 0.3초동안 자연스럽게 runloop 가 일어나도록 하는 코드
         }
     }
+    
+    
+    //email. pw 모두 글자가 있으면 버튼을 빨간색으로 변화
+    @objc func textFieldEditingChanged(_ textField: UITextField){
+        if textField.text?.count == 1 {
+            if textField.text?.first == " " {
+            textField.text == ""
+            return
+        }
+    }
+    guard
+    let email = emailTextField.text, !email.isEmpty,
+    let password = passwordTextField.text, !password.isEmpty else {
+        loginButton.backgroundColor = .clear
+        loginButton.isEnabled = false
+        return
+    }
+    loginButton.backgroundColor = .red
+    loginButton.isEnabled = true
+}
+    
+    //delegate 프로토콜 사용 :: 텍스트 필드에 한글자 입력할때마다 불려지는 함수
+    //    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+            //로그인 버튼 빨간색으로 만들기
+    //    }
 }
 
 
